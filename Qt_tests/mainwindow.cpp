@@ -24,15 +24,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-//void MainWindow::on_sin_in_clicked()
-//{
-//    QNetworkRequest request(QUrl(registration_url));
-   // request.setHeader(QNetworkRequest::ContentTypeHeader, JSON);
-//    QJsonObject JSON;
-//    JSON.insert("username", userinput);
-
-//}
-
 void MainWindow::on_Sing_In_clicked()
 {
     ui->frame->show();
