@@ -55,5 +55,5 @@ void SingUpWindow::on_Sing_In2_clicked()
     qDebug () << "End of reading" << endl;
 
     reply->deleteLater();
-    this-close();
+    this->close();
 }
