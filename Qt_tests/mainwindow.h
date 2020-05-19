@@ -24,6 +24,8 @@ private slots:
 
     void on_close_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

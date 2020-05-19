@@ -18,14 +18,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    singinwindow.cpp \
     singupwindow.cpp
 
 HEADERS += \
     mainwindow.h \
+    singinwindow.h \
     singupwindow.h
 
 FORMS += \
     mainwindow.ui \
+    singinwindow.ui \
     singupwindow.ui
 
 # Default rules for deployment.

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Sing up</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -135,7 +135,7 @@
    <widget class="QPushButton" name="Sing_In2">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>60</x>
       <y>320</y>
       <width>141</width>
       <height>31</height>

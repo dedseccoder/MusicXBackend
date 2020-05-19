@@ -50,9 +50,9 @@ void SingUpWindow::on_Sing_In2_clicked()
     }
     QVariant response_code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
 
-    qDebug () << "Start reading response" << endl;
+    qDebug () << "Start reading sing up response" << endl;
     qDebug () << response_code << endl;
-    qDebug () << "End of reading" << endl;
+    qDebug () << "End of reading sing up response" << endl;
 
     reply->deleteLater();
     this->close();

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "singupwindow.h"
+#include "singinwindow.h"
 
 #include <QtNetwork>
 #include <QDebug>
@@ -17,6 +18,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::on_close_clicked()
+{
+    this->close();
+}
+
 void MainWindow::on_Sing_In_clicked()
 {
     SingUpWindow sing_up;
@@ -24,7 +30,9 @@ void MainWindow::on_Sing_In_clicked()
     sing_up.exec();
 }
 
-void MainWindow::on_close_clicked()
+void MainWindow::on_pushButton_clicked()
 {
-    this->close();
+    SingInWindow sing_in;
+    sing_in.setModal(true);
+    sing_in.exec();
 }
