@@ -21,7 +21,8 @@ SingInWindow::~SingInWindow()
 void SingInWindow::on_Sing_In_clicked()
 {
     //link for the app to server
-    QNetworkRequest request (QUrl("http://213.59.157.203/api/authenticate"));
+    QNetworkRequest request (QUrl("http://213.59.157.203/MusicXBackend/api/authenticate"));
+    //QNetworkRequest request (QUrl("http://213.59.157.203/api/authenticate"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     QNetworkAccessManager man;
 
@@ -40,13 +41,17 @@ void SingInWindow::on_Sing_In_clicked()
     {
         qApp->processEvents();
     }
+    if (reply->error())
+    {
+        qDebug () << "ERROR: " << reply->error() << endl;
+    }
     //convert reply to JSON (i hope)
     QJsonDocument reply_document = QJsonDocument::fromJson(reply->readAll());
     //get code response HTTP
     QVariant response_code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
     //console output
     qDebug () << "start reading sing in response" << endl;
-    qDebug () << response_code << endl;
+    qDebug () << "response code: " << response_code << endl;
     //getting our token from JSON reply
     QString token = reply_document.object().value("token").toString();
     qDebug () << "Token = " << token << endl;
@@ -54,4 +59,5 @@ void SingInWindow::on_Sing_In_clicked()
 
     reply->deleteLater();
     this->close();
+
 }

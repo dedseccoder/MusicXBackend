@@ -23,7 +23,7 @@ SingUpWindow::~SingUpWindow()
 
 void SingUpWindow::on_Sing_In2_clicked()
 {
-    QNetworkRequest request (QUrl("http://213.59.157.203/api/register"));
+    QNetworkRequest request (QUrl("http://213.59.157.203/MusicXBackend/api/register"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
     QNetworkAccessManager man;
 
