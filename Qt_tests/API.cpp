@@ -6,9 +6,9 @@
 
 using namespace std;
 
+
 void API :: Register()
 {
-    QNetworkRequest request (QUrl("http://213.59.157.203/MusicXBackend/api/register"));
-    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    QNetworkAccessManager man;
+    HttpUtils https;
+    https.GET("http://213.59.157.203/MusicXBackend/api/register", )
 }
