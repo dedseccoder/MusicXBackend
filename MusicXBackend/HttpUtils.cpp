@@ -13,10 +13,9 @@ std::string HttpUtils :: GET(QUrl URL, QMap<QString, QString>*headers)
     request.setRawHeader("Content-Type", "application/json");
     if(headers != NULL)
     {
-        QMap<QString, QString>::iterator i;
-        for (int i = *headers->begin(); i != *headers->end(); ++i)
+        for (auto e : (*headers).keys())
         {
-        request.setRawHeader(i.key(), i.value());
+            request.setRawHeader(e, e.value());
         }
     }
 }

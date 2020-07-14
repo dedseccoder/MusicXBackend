@@ -10,5 +10,5 @@ using namespace std;
 void API :: Register()
 {
     HttpUtils https;
-    https.GET("http://213.59.157.203/MusicXBackend/api/register", )
+    https.GET(base_url + "api/register", NULL);
 }

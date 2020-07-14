@@ -7,6 +7,7 @@
 class API
 {
 public:
+    API (QString arg_base_url){base_url = arg_base_url;}
     void Register();
     void Austh();
     void GetSong();
@@ -17,5 +18,6 @@ private:
     QNetworkRequest request;
     QJsonObject JSON;
     QVariant response_code;
+    QString base_url;
 };
 #endif // API_H
