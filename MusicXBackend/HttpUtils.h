@@ -9,7 +9,7 @@
 class HttpUtils
 {
 public:
-    std::string static GET(QUrl URL, QMap<QString, QString>*headers);
+    QString static GET(QUrl URL, QMap<QByteArray, QByteArray> *headers);
     void static POST();
     void static PUT();
     void static DELETE();

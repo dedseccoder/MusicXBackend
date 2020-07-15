@@ -7,8 +7,7 @@
 using namespace std;
 
 
-void API :: Register()
+void API::Register()
 {
-    HttpUtils https;
-    https.GET(base_url + "api/register", NULL);
+    QString reply = HttpUtils::GET(base_url + "api/register", NULL);
 }
