@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     API.cpp \
     HttpUtils.cpp \
+    Repository.cpp \
     main.cpp \
     mainwindow.cpp \
     singinwindow.cpp \
@@ -26,6 +27,7 @@ SOURCES += \
 HEADERS += \
     API.h \
     HttpUtils.h \
+    Repository.h \
     mainwindow.h \
     singinwindow.h \
     singupwindow.h

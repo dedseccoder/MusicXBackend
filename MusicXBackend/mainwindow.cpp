@@ -1,12 +1,15 @@
 #include "mainwindow.h"
 #include "API.h"
 #include "HttpUtils.h"
+#include "Repository.h"
 #include "ui_mainwindow.h"
 #include "singupwindow.h"
 #include "singinwindow.h"
 
 #include <QtNetwork>
 #include <QDebug>
+
+Repository repository = Repository::getInstance();
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,8 +22,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-API api ("http://213.59.157.203/MusicXBackend/");
 
 void MainWindow::on_close_clicked()
 {
