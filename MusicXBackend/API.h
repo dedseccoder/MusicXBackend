@@ -9,7 +9,7 @@ class API : public QObject
 public:
     API(QString arg_base_url) {base_url = arg_base_url;}
     void Register();
-    void Auth();
+    QString Auth(QString, QString);
     void GetSong();
     void GetPlaylist();
 

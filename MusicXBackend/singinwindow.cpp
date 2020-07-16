@@ -25,7 +25,9 @@ void SingInWindow::on_Sing_In_clicked()
     Repository repository = Repository::getInstance();
     API *api = (API *)repository.getItem("API");
 
-    // TODO: USE *api for requests
+    // TODO: USE api object for requests
+    // Example:
+    // api->Auth();
 
     //link for the app to server
     QNetworkRequest request (QUrl("http://213.59.157.203/MusicXBackend/api/authenticate"));
