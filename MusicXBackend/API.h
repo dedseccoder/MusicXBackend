@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QtNetwork>
 
-class API
+class API : public QObject
 {
 public:
     API(QString arg_base_url) {base_url = arg_base_url;}

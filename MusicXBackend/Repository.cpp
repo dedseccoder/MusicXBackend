@@ -2,10 +2,12 @@
 #include <QObject>
 #include <QString>
 
-void Repository::putItem(QString id, QObject obj) {
-
+void Repository::putItem(QString id, QObject *obj) {
+    if (obj != nullptr) {
+        repository.insert(id, obj);
+    }
 }
 
-void Repository::getItem(QString id) {
-
+QObject* Repository::getItem(QString id) {
+    return repository.value(id);
 }

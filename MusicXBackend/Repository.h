@@ -3,9 +3,11 @@
 
 #include <QObject>
 #include <QString>
+#include <QMap>
 
 class Repository {
 private:
+    QMap<QString, QObject*> repository;
     Repository() {}
 
 public:
@@ -14,8 +16,8 @@ public:
         return instance;
     };
 
-    void putItem(QString, QObject);
-    void getItem(QString);
+    void putItem(QString, QObject*);
+    QObject* getItem(QString);
 };
 
 #endif // REPOSITORY_H
