@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "API.h"
+#include "HttpUtils.h"
 #include "ui_mainwindow.h"
 #include "singupwindow.h"
 #include "singinwindow.h"

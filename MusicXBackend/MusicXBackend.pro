@@ -16,12 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    API.cpp \
+    HttpUtils.cpp \
+    Repository.cpp \
     main.cpp \
     mainwindow.cpp \
     singinwindow.cpp \
     singupwindow.cpp
 
 HEADERS += \
+    API.h \
+    HttpUtils.h \
+    Repository.h \
     mainwindow.h \
     singinwindow.h \
     singupwindow.h

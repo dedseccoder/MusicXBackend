@@ -19,7 +19,6 @@ public:
 private slots:
 
 
-
     void on_Sing_In_clicked();
 
     void on_close_clicked();
@@ -29,4 +28,5 @@ private slots:
 private:
     Ui::MainWindow *ui;
 };
+
 #endif // MAINWINDOW_H
