@@ -1,5 +1,8 @@
 #include "singupwindow.h"
 #include "ui_singupwindow.h"
+#include "HttpUtils.h"
+#include "API.h"
+#include "Repository.h"
 
 #include <QtNetwork>
 #include <QDebug>
@@ -23,9 +26,15 @@ SingUpWindow::~SingUpWindow()
 
 void SingUpWindow::on_Sing_In2_clicked()
 {
+    Repository repository = Repository::getInstance();
+    API *api = (API *)repository.getItem("API");
+
+    // TODO: USE api object for requests
+    // Example:
+    // api->Register();
+
     QNetworkRequest request (QUrl("http://213.59.157.203/MusicXBackend/api/register"));
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
-    QNetworkAccessManager man;
 
     QString username_input;
     QString password_input;
@@ -43,6 +52,7 @@ void SingUpWindow::on_Sing_In2_clicked()
     JSON.insert ("name", name_input);
     JSON.insert("lastname", lastname_input);
 
+    QNetworkAccessManager man;
     QNetworkReply *reply = man.post(request, QJsonDocument(JSON).toJson());
     while (!reply->isFinished())
     {

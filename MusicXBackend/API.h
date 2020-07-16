@@ -8,8 +8,8 @@ class API : public QObject
 {
 public:
     API(QString arg_base_url) {base_url = arg_base_url;}
-    void Register();
-    QString Auth(QString, QString);
+    void Register(QString username_input, QString password_input, QString name_input, QString lastname_input);
+    QString Auth(QString username_input, QString password_input);
     void GetSong();
     void GetPlaylist();
 

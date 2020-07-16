@@ -14,7 +14,7 @@ public:
     static Repository& getInstance() {
         static Repository instance;
         return instance;
-    };
+    }
 
     void putItem(QString, QObject*);
     QObject* getItem(QString);
