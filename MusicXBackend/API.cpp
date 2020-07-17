@@ -14,8 +14,14 @@ void API::Register(QString username, QString password, QString name, QString las
     JSON.insert("password", password);
     JSON.insert ("name", name);
     JSON.insert("lastname", lastname);
+
     QNetworkReply *reply = HttpUtils::POST(base_url + "api/register", JSON, NULL);
-    qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
+
+    qDebug () << "Start reading sing up response" << endl;
+    qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << endl;
+    qDebug () << "End of reading sing up response" << endl;
+    reply->deleteLater();
+    return;
 }
 
 QString API::Auth(QString username, QString password) {

@@ -9,10 +9,10 @@
 class HttpUtils
 {
 public:
-    QString static GET(QUrl URL, QMap<QByteArray, QByteArray> *headers);
-    QNetworkReply static *POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, QByteArray> *headers);
-    void static PUT();
-    void static DELETE();
+    static QString GET(QUrl URL, QMap<QByteArray, QByteArray> *headers);
+    static QNetworkReply* POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, QByteArray> *headers);
+    static void PUT();
+    static void DELETE();
 };
 
 #endif // HTTPUTILS_H
