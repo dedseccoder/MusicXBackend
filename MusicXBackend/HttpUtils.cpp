@@ -20,7 +20,7 @@ QString HttpUtils::GET(QUrl URL, QMap<QByteArray, QByteArray> *headers)
     }
 }
 
-QVariant HttpUtils::POST(QJsonObject JSON_obj, QUrl URL, QMap<QByteArray, QByteArray> *headers)
+QNetworkReply *HttpUtils::POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, QByteArray> *headers)
 {
     QNetworkRequest request (URL);
     request.setRawHeader("Content-Type", "application/json");
@@ -37,6 +37,6 @@ QVariant HttpUtils::POST(QJsonObject JSON_obj, QUrl URL, QMap<QByteArray, QByteA
          {
              qApp->processEvents();
          }
-     QVariant response_code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
-     return response_code;
+     //QVariant response_code = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
+     return reply;
 }

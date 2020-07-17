@@ -8,19 +8,12 @@ class API : public QObject
 {
 public:
     API(QString arg_base_url) {base_url = arg_base_url;}
-    void Register(QString username_input, QString password_input, QString name_input, QString lastname_input);
-    QString Auth(QString username_input, QString password_input);
+    void Register(QString username, QString password, QString name, QString lastname);
+    QString Auth(QString username, QString password);
     void GetSong();
     void GetPlaylist();
 
 private:
-    // <REMOVE_THIS>
-    // QString token, password_auth, username_auth;
-    // QNetworkAccessManager man;
-    // QNetworkRequest request;
-    // QJsonObject JSON;
-    // QVariant response_code;
-    // </REMOVE_THIS>
     QString base_url;
 };
 #endif // API_H

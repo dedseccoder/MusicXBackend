@@ -7,18 +7,18 @@
 using namespace std;
 
 
-void API::Register(QString username_input, QString password_input, QString name_input, QString lastname_input)
+void API::Register(QString username, QString password, QString name, QString lastname)
 {
-    QString reply = HttpUtils::GET(base_url + "api/register", NULL);
     QJsonObject JSON;
-    JSON.insert("username", username_input);
-    JSON.insert("password", password_input);
-    JSON.insert ("name", name_input);
-    JSON.insert("lastname", lastname_input);
-    HttpUtils::POST(JSON, base_url, NULL);
+    JSON.insert("username", username);
+    JSON.insert("password", password);
+    JSON.insert ("name", name);
+    JSON.insert("lastname", lastname);
+    QNetworkReply *reply = HttpUtils::POST(base_url + "api/register", JSON, NULL);
+    qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute);
 }
 
-QString API::Auth(QString username_input, QString password_input) {
+QString API::Auth(QString username, QString password) {
     QString reply = HttpUtils::GET(base_url + "api/login", NULL);
     // TODO: Release this function
     return QString("");
