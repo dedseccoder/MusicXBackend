@@ -38,6 +38,6 @@ void SingUpWindow::on_Sing_In2_clicked()
                   ui->NameInput->text(),
                   ui->LastNameInput->text()
                   );
-    qDebug() << "2" << endl;
+
     this->close();
 }

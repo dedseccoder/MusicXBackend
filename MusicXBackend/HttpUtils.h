@@ -10,7 +10,7 @@ class HttpUtils
 {
 public:
     static QString GET(QUrl URL, QMap<QByteArray, QByteArray> *headers);
-    static QNetworkReply* POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, QByteArray> *headers);
+    static QNetworkReply *POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, QByteArray> *headers);
     static void PUT();
     static void DELETE();
 };

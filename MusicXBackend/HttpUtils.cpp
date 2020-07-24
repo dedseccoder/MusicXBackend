@@ -21,8 +21,9 @@ QString HttpUtils::GET(QUrl URL, QMap<QByteArray, QByteArray> *headers)
     return QString ("");
 }
 
-QNetworkReply* HttpUtils::POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, QByteArray> *headers)
+QNetworkReply *HttpUtils::POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, QByteArray> *headers)
 {
+    qDebug () << "start http post" << endl;
     QNetworkRequest request (URL);
     request.setRawHeader("Content-Type", "application/json");
     if(headers != NULL)
@@ -32,7 +33,8 @@ QNetworkReply* HttpUtils::POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, 
             request.setRawHeader(e, headers->value(e));
         }
     }
-     QNetworkAccessManager network_manager;
+
+    QNetworkAccessManager network_manager;
      QNetworkReply *reply = network_manager.post(request, QJsonDocument(JSON_obj).toJson());
      while (!reply->isFinished())
          {
@@ -42,5 +44,6 @@ QNetworkReply* HttpUtils::POST(QUrl URL, QJsonObject JSON_obj, QMap<QByteArray, 
         {
             qDebug () << "ERROR: " << reply->error() << endl;
         }
+     qDebug () << "return reply" << endl;
      return reply;
 }

@@ -9,17 +9,19 @@ using namespace std;
 
 void API::Register(QString username, QString password, QString name, QString lastname)
 {
+    qDebug () << "5" << endl;
     QJsonObject JSON;
     JSON.insert("username", username);
     JSON.insert("password", password);
     JSON.insert ("name", name);
     JSON.insert("lastname", lastname);
-
+    qDebug () << "7" << endl;
     QNetworkReply *reply = HttpUtils::POST(base_url + "api/register", JSON, NULL);
 
     qDebug () << "Start reading sing up response" << endl;
     qDebug() << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute) << endl;
     qDebug () << "End of reading sing up response" << endl;
+
     reply->deleteLater();
     return;
 }
