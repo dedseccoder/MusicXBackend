@@ -13,10 +13,10 @@ SingUpWindow::SingUpWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->UsernameInput->setText("");
-    ui->PasswordInput->setText("");
-    ui->NameInput->setText("");
-    ui->LastNameInput->setText("");
+    ui->UsernameInput->setText("Sher");
+    ui->PasswordInput->setText("goldman");
+    ui->NameInput->setText("Andrey");
+    ui->LastNameInput->setText("Loginov");
 }
 
 SingUpWindow::~SingUpWindow()
@@ -26,10 +26,8 @@ SingUpWindow::~SingUpWindow()
 
 void SingUpWindow::on_Sing_In2_clicked()
 {
-    qDebug() << "3" << endl;
     Repository repository = Repository::getInstance();
     API *api = (API *)repository.getItem("API");
-    qDebug() << "4" << endl;
     // TODO: USE api object for requests
     // Example:
     // api->Register();
