@@ -11,3 +11,5 @@ void Repository::putItem(QString id, QObject *obj) {
 QObject* Repository::getItem(QString id) {
     return repository.value(id);
 }
+
+Repository* Repository::instance = NULL;

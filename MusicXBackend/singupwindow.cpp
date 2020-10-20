@@ -26,8 +26,8 @@ SingUpWindow::~SingUpWindow()
 
 void SingUpWindow::on_Sing_In2_clicked()
 {
-    Repository repository = Repository::getInstance();
-    API *api = (API *)repository.getItem("API");
+    Repository* repository = Repository::getInstance();
+    API *api = (API *)repository->getItem("API");
     // TODO: USE api object for requests
     // Example:
     // api->Register();

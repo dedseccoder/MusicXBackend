@@ -7,12 +7,16 @@
 
 class Repository {
 private:
+    static Repository* instance;
     QMap<QString, QObject*> repository;
     Repository() {}
+    ~Repository() {}
 
 public:
-    static Repository& getInstance() {
-        static Repository instance;
+    static Repository* getInstance() {
+        if (instance == NULL) {
+            instance = new Repository();
+        }
         return instance;
     }
 
